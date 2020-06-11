@@ -232,5 +232,6 @@ class Usuario extends BaseController {
         $contenido_crudo = file_get_contents("php://input");
         echo "CONTENIDO CRUDO:\n";
         echo $contenido_crudo;
+        echo date("Y-m-d");
     }
 }
