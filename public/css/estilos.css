@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+main{
+    padding: 0 1em;
+}
+.main-menu{
+    background-color: #ffc;
+}
+.main-menu ul{
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+}
+.main-menu ul li{
+    float: left;
+}
+.main-menu ul::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.main-menu a{
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+table.data{
+    border-collapse: collapse;
+}
+table.data th{
+    background-color:  black;
+    color: white;
+    border: 1px solid black;
+}
+table.data td{
+    border: 1px solid black;
+}
+.table-form td{
+    vertical-align: top;
+}
+div.error{
+    color: red;
+    font-size: .8em;
+    margin: 5px 0;
+}
+div.success{
+    background-color: green;
+    color: white;
+    font-size: 0.8em;
+    padding: 10px;
+    margin: 1em 0;
+}

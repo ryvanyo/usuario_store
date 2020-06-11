@@ -1,0 +1,19 @@
+Este ejemplo incluye el código para crear un nuevo usuario, con validaciones en el modelo. 
+
+Con eso ya es posible llamar a las funciones insert, update y save de cada modelo, aplicando esas validaciones, de esa manera aprovechamos esa característica de CodeIgniter.
+
+Solo se terminó el registro de un usuario.
+
+La tarea consiste en completar:
+
+- La lista de usuarios, incluir enlaces para Modificar y Borrar en cada usuario (en cada fila)
+
+- Crear el código para modificar un usuario (un nuevo método en el controlador y la vista correspondiente)
+
+- Crear el código para borrar un usuario (un nuevo método en el controlador y su correspondiente vista)
+
+- Crear el código para lista, registrar, modificar y borrar asignaturas, de manera similar a la parte de usuarios.
+
+Se incluye un dump de la base de datos usada en el ejemplo, procuren usar esa misma base de datos, la uede enontrar en el archivo usuarios.sql.
+
+El trabajo se puede hacer en grupos de 2 personas, deben incluir los nombres de los integrantes en el archivo integrantes.txt en la raís del proyecto que me van a enviar.
