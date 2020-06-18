@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8080/io1/ci/usuarios_store/public/';
+	public $baseURL = 'http://localhost:88/';
 
 	/*
 	|--------------------------------------------------------------------------
