@@ -83,4 +83,17 @@ class Bot extends BaseController
                 ]);
             } catch(\Exception $e){}
     }
+    
+    public function setHook(){
+        $client = \Config\Services::curlrequest();
+        
+        $params = [
+            "url" => site_url("bot/hook"),
+        ];
+            
+        // chat_id=<contenido>&text=<contenido>
+        $client->setHeader("Content-Type", "application/json")
+               ->setBody(json_encode($params))
+               ->post($this->base_url."setWebhook");
+    }
 }
