@@ -219,6 +219,51 @@ class Usuario extends BaseController {
         echo view("usuario/notify", $data);
     }
     
+    public function bio(){
+        helper("form");
+        
+        $content = "";
+        if ($this->request->getMethod()=="post") {
+            $content = $this->request->getPost("bio_content");
+            file_put_contents(FCPATH."/bio.html", $content);
+        }
+        
+        echo view("usuario/bio", ["content"=>$content]);
+    }
+    
+    public function upload_image(){
+        /* @var $file \CodeIgniter\HTTP\Files\UploadedFile */
+        $file = $this->request->getFile("upload");
+        
+        if (!empty($file) 
+                && $file->getError()!=0
+                && $file->getSize()==0) {
+            
+            return $this->response->setJSON([
+                "uploaded" => 0,           
+                "error" => [
+                    "message" => "No se subio ningun archivo"
+                ]
+            ]);
+            
+        }
+        
+        $destination_dir = FCPATH."/img/bio";
+        if (!is_dir($destination_dir)) {
+            mkdir($destination_dir, 0755, true);
+        }
+        
+        $new_name = date("YmdHis").rand(0,9999).".".$file->getExtension();
+        
+        $file->move($destination_dir, $new_name);
+        
+        return $this->response->setJSON([
+            "uploaded" => 1,
+            "filename" => $new_name,
+            "url" => base_url("img/bio/".$new_name)
+        ]);
+    }
+    
     public function http(){
         echo "GET";
         print_r($_GET);
@@ -233,5 +278,11 @@ class Usuario extends BaseController {
         echo "CONTENIDO CRUDO:\n";
         echo $contenido_crudo;
         echo date("Y-m-d");
+    }
+    
+    public function where($nombre){
+        $usuario = new UsuarioModel();
+        $encontrado = $usuario->asArray()->where(["nombre" => $nombre])->first();
+        var_dump($encontrado);
     }
 }

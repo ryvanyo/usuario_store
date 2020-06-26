@@ -86,6 +86,15 @@
               </p>
             </a>
           </li>
+          
+          <li class="nav-item has-treeview">
+            <a href="<?php echo site_url("usuario/bio"); ?>" class="nav-link">
+              <i class="fa fa-envelope"></i>
+              <p>
+                BIO
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

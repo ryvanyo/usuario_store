@@ -14,5 +14,6 @@
                     <li><?php echo anchor("asignatura/lista", "Asignaturas"); ?></li>
                     <li><?php echo anchor("usuario/notify", "Notify"); ?></li>
                     <li><?php echo anchor("usuario/notifyhtml", "Notify HTML"); ?></li>
+                    <li><?php echo anchor("usuario/bio", "BIO"); ?></li>
                 </ul>
             </nav>
